@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>薬液採取量 計算ツール</title>
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body { font-family: Arial; padding: 20px; }
+    input { width: 100%; padding: 10px; margin: 8px 0; font-size: 18px; }
+    button { width: 100%; padding: 12px; font-size: 20px; margin-top: 10px; }
+    .result { margin-top: 20px; font-size: 22px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h2>薬液採取量 計算ツール</h2>
+
+<label>室温（℃）</label>
+<input type="number" id="roomTemp" step="0.1">
+
+<label>ガス作製量（L）</label>
+<input type="number" id="gasVolume" step="0.01">
+
+<label>薬液の分子量</label>
+<input type="number" id="molWeight" step="0.01">
+
+<label>作製濃度（ppm）</label>
+<input type="number" id="makePPM" step="0.01">
+
+<label>薬液の比重</label>
+<input type="number" id="density" step="0.001">
+
+<button onclick="calc()">計算する</button>
+
+<div class="result" id="result"></div>
+
+<script>
+function calc() {
+    const roomTemp = parseFloat(document.getElementById("roomTemp").value);
+    const gasVolume = parseFloat(document.getElementById("gasVolume").value);
+    const molWeight = parseFloat(document.getElementById("molWeight").value);
+    const makePPM = parseFloat(document.getElementById("makePPM").value);
+    const density = parseFloat(document.getElementById("density").value);
+
+    if (roomTemp < 0 || gasVolume <= 0 || molWeight <= 0 || makePPM <= 0 || density <= 0) {
+        document
