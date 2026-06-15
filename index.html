@@ -72,6 +72,30 @@
         text-align: center;
         color: #333;
     }
+
+    .formula {
+        margin-top: 28px;
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+        background: #f7f7fa;
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .formula-title {
+        font-weight: bold;
+        margin-bottom: 6px;
+    }
+
+    .formula-code {
+        font-family: "SF Mono", Menlo, Consolas, monospace;
+        font-size: 15px;
+        background: #eee;
+        padding: 8px;
+        border-radius: 8px;
+        margin-top: 6px;
+    }
 </style>
 </head>
 <body>
@@ -91,6 +115,14 @@
     <button onclick="calc()">計算する</button>
 
     <div class="result" id="result"></div>
+
+    <div class="formula">
+        <div class="formula-title">【計算式】気体ガス採取量（mL）</div>
+        <div>分母：ボンベガス濃度 − 作製濃度 が 0 以下の場合はエラーとする。</div>
+        <div class="formula-code">
+            採取量(mL) = 希釈ガス作製量(L) × 作製濃度(ppm) ÷ {ボンベガス濃度(ppm) − 作製濃度(ppm)} × 1000
+        </div>
+    </div>
 </div>
 
 <script>
