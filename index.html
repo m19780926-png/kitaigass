@@ -131,19 +131,6 @@
         border-left: 6px solid #000000;
     }
 
-    .formula-title {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 12px;
-    }
-
-    .formula-math {
-        font-family: "SF Mono", Consolas, monospace;
-        font-size: 17px;
-        line-height: 1.6;
-        text-align: center;
-    }
-
     table {
         width: 100%;
         font-size: 18px;
@@ -162,13 +149,6 @@
 
     td {
         border-bottom: 1px solid #eee;
-    }
-
-    .search-result {
-        margin-top: 20px;
-        font-size: 22px;
-        font-weight: bold;
-        text-align: center;
     }
 </style>
 </head>
@@ -267,32 +247,78 @@
 
     <button class="back-btn" onclick="backMenu()">← ホームに戻る</button>
 </div>
-<!-- ▼ LEL 一覧ツール -->
+<!-- ▼ LEL 一覧（軽量版） -->
 <div id="lel" class="app-card">
-    <h2>可燃性ガス LEL 一覧</h2>
+    <h2>可燃性ガス LEL 一覧（50種類）</h2>
 
     <div class="formula-card">
-        <div class="formula-title">主要ガスの爆発下限界（LEL）</div>
+        <div class="formula-title">爆発下限界（LEL）一覧</div>
+
         <table>
             <tr><th>ガス名</th><th style="text-align:right;">LEL（%）</th></tr>
+
             <tr><td>水素（H₂）</td><td style="text-align:right;">4.0</td></tr>
             <tr><td>メタン（CH₄）</td><td style="text-align:right;">5.0</td></tr>
-            <tr><td>プロパン（C₃H₈）</td><td style="text-align:right;">2.1</td></tr>
-            <tr><td>ブタン（C₄H₁₀）</td><td style="text-align:right;">1.8</td></tr>
+            <tr><td>エタン（C₂H₆）</td><td style="text-align:right;">3.0</td></tr>
+            <tr><td>エチレン（C₂H₄）</td><td style="text-align:right;">2.7</td></tr>
             <tr><td>アセチレン（C₂H₂）</td><td style="text-align:right;">2.5</td></tr>
+            <tr><td>プロパン（C₃H₈）</td><td style="text-align:right;">2.1</td></tr>
+            <tr><td>プロピレン（C₃H₆）</td><td style="text-align:right;">2.0</td></tr>
+            <tr><td>ブタン（C₄H₁₀）</td><td style="text-align:right;">1.8</td></tr>
+            <tr><td>イソブタン（i-C₄H₁₀）</td><td style="text-align:right;">1.8</td></tr>
+            <tr><td>ペンタン（C₅H₁₂）</td><td style="text-align:right;">1.4</td></tr>
+            <tr><td>イソペンタン（i-C₅H₁₂）</td><td style="text-align:right;">1.4</td></tr>
+            <tr><td>ヘキサン（C₆H₁₄）</td><td style="text-align:right;">1.2</td></tr>
+            <tr><td>シクロヘキサン（C₆H₁₂）</td><td style="text-align:right;">1.3</td></tr>
+            <tr><td>ヘプタン（C₇H₁₆）</td><td style="text-align:right;">1.1</td></tr>
+            <tr><td>オクタン（C₈H₁₈）</td><td style="text-align:right;">1.0</td></tr>
+            <tr><td>ノナン（C₉H₂₀）</td><td style="text-align:right;">0.9</td></tr>
+            <tr><td>デカン（C₁₀H₂₂）</td><td style="text-align:right;">0.8</td></tr>
+
+            <tr><td>一酸化炭素（CO）</td><td style="text-align:right;">12.5</td></tr>
+
+            <tr><td>エタノール蒸気（C₂H₅OH）</td><td style="text-align:right;">3.3</td></tr>
+            <tr><td>メタノール蒸気（CH₃OH）</td><td style="text-align:right;">6.0</td></tr>
+            <tr><td>イソプロパノール（C₃H₈O）</td><td style="text-align:right;">2.0</td></tr>
+
+            <tr><td>アセトン（C₃H₆O）</td><td style="text-align:right;">2.6</td></tr>
+            <tr><td>プロピオンアルデヒド（C₃H₆O）</td><td style="text-align:right;">2.0</td></tr>
+
+            <tr><td>MEK（C₄H₈O）</td><td style="text-align:right;">1.8</td></tr>
+            <tr><td>トルエン（C₇H₈）</td><td style="text-align:right;">1.2</td></tr>
+            <tr><td>キシレン（C₈H₁₀）</td><td style="text-align:right;">1.1</td></tr>
+            <tr><td>エチルベンゼン（C₈H₁₀）</td><td style="text-align:right;">1.0</td></tr>
+            <tr><td>スチレン（C₈H₈）</td><td style="text-align:right;">1.1</td></tr>
+            <tr><td>ベンゼン（C₆H₆）</td><td style="text-align:right;">1.2</td></tr>
+
+            <tr><td>ジエチルエーテル（C₄H₁₀O）</td><td style="text-align:right;">1.9</td></tr>
+            <tr><td>テトラヒドロフラン（C₄H₈O）</td><td style="text-align:right;">2.0</td></tr>
+
+            <tr><td>酢酸エチル（C₄H₈O₂）</td><td style="text-align:right;">2.2</td></tr>
+            <tr><td>酢酸メチル（C₃H₆O₂）</td><td style="text-align:right;">3.1</td></tr>
+
+            <tr><td>アンモニア（NH₃）</td><td style="text-align:right;">15</td></tr>
             <tr><td>硫化水素（H₂S）</td><td style="text-align:right;">4.3</td></tr>
+            <tr><td>二硫化炭素（CS₂）</td><td style="text-align:right;">1.3</td></tr>
+
+            <tr><td>ホルムアルデヒド（CH₂O）</td><td style="text-align:right;">7.0</td></tr>
+            <tr><td>アクリロニトリル（C₃H₃N）</td><td style="text-align:right;">2.8</td></tr>
+
+            <tr><td>エチレンオキシド（C₂H₄O）</td><td style="text-align:right;">3.0</td></tr>
+            <tr><td>アセトアルデヒド（C₂H₄O）</td><td style="text-align:right;">4.0</td></tr>
+            <tr><td>プロピレンオキシド（C₃H₆O）</td><td style="text-align:right;">2.3</td></tr>
+
+            <tr><td>アクリル酸メチル（C₄H₆O₂）</td><td style="text-align:right;">2.8</td></tr>
+            <tr><td>アクリル酸エチル（C₅H₈O₂）</td><td style="text-align:right;">2.0</td></tr>
+            <tr><td>アクリル酸ブチル（C₇H₁₂O₂）</td><td style="text-align:right;">1.4</td></tr>
+            <tr><td>アクリル酸（C₃H₄O₂）</td><td style="text-align:right;">2.0</td></tr>
+
         </table>
     </div>
 
-    <label>ガス名・化学式で検索</label>
-    <input type="text" id="searchGas" placeholder="例：CH4, C3H6, H2, メタン">
-
-    <button class="calc-btn" onclick="searchLEL()">検索する</button>
-
-    <div id="searchResult" class="search-result"></div>
-
     <button class="back-btn" onclick="backMenu()">← ホームに戻る</button>
 </div>
+
 <script>
 function showTool(id) {
     menu.style.display = "none";
@@ -347,90 +373,6 @@ function calcLiquid() {
 
     const result = tempFactor * (numerator / denominator);
     liquidResult.innerHTML = "採取量：" + result.toFixed(2) + " μL";
-}
-    /* ▼ LEL 50種類データベース */
-const lelData = {
-    "H2":4.0,"水素":4.0,
-    "CH4":5.0,"メタン":5.0,
-    "C2H6":3.0,"エタン":3.0,
-    "C2H4":2.7,"エチレン":2.7,
-    "C2H2":2.5,"アセチレン":2.5,
-    "C3H8":2.1,"プロパン":2.1,
-    "C3H6":2.0,"プロピレン":2.0,"プロペン":2.0,
-    "C4H10":1.8,"ブタン":1.8,
-    "i-C4H10":1.8,"イソブタン":1.8,
-    "C5H12":1.4,"ペンタン":1.4,
-    "i-C5H12":1.4,"イソペンタン":1.4,
-    "C6H14":1.2,"ヘキサン":1.2,
-    "C6H12":1.3,"シクロヘキサン":1.3,
-    "C7H16":1.1,"ヘプタン":1.1,
-    "C8H18":1.0,"オクタン":1.0,
-    "C9H20":0.9,"ノナン":0.9,
-    "C10H22":0.8,"デカン":0.8,
-
-    "CO":12.5,"一酸化炭素":12.5,
-
-    "C2H5OH":3.3,"エタノール":3.3,
-    "CH3OH":6.0,"メタノール":6.0,
-    "C3H8O":2.0,"イソプロパノール":2.0,
-
-    "C3H6O":2.6,"アセトン":2.6,
-    "C3H6O_2":2.0,"プロピオンアルデヒド":2.0,
-
-    "C4H8O":1.8,"MEK":1.8,"メチルエチルケトン":1.8,
-    "C7H8":1.2,"トルエン":1.2,
-    "C8H10":1.1,"キシレン":1.1,
-    "C8H10_2":1.0,"エチルベンゼン":1.0,
-
-    "C8H8":1.1,"スチレン":1.1,
-    "C6H6":1.2,"ベンゼン":1.2,
-
-    "C4H10O":1.9,"ジエチルエーテル":1.9,
-    "C4H8O_3":2.0,"テトラヒドロフラン":2.0,
-
-    "C4H8O2":2.2,"酢酸エチル":2.2,
-    "C3H6O2":3.1,"酢酸メチル":3.1,
-
-    "NH3":15,"アンモニア":15,
-    "H2S":4.3,"硫化水素":4.3,
-    "CS2":1.3,"二硫化炭素":1.3,
-
-    "CH2O":7.0,"ホルムアルデヒド":7.0,
-    "C3H3N":2.8,"アクリロニトリル":2.8,
-
-    "C2H4O":3.0,"エチレンオキシド":3.0,
-    "C2H4O_2":4.0,"アセトアルデヒド":4.0,
-
-    "C3H6O_3":2.3,"プロピレンオキシド":2.3,
-
-    "C4H6O2":2.8,"アクリル酸メチル":2.8,
-    "C5H8O2":2.0,"アクリル酸エチル":2.0,
-    "C7H12O2":1.4,"アクリル酸ブチル":1.4,
-
-    "C3H4O2":2.0,"アクリル酸":2.0
-};
-
-/* ▼ LEL 検索 */
-function searchLEL() {
-    const key = document.getElementById("searchGas").value.trim();
-    const resultBox = document.getElementById("searchResult");
-
-    if (key === "") {
-        resultBox.innerHTML = "ガス名または化学式を入力してください。";
-        return;
-    }
-
-    if (lelData[key] !== undefined) {
-        resultBox.innerHTML = key + " の LEL は <b>" + lelData[key] + " %</b>";
-        return;
-    }
-
-    const found = Object.keys(lelData).find(name => name.includes(key));
-    if (found) {
-        resultBox.innerHTML = found + " の LEL は <b>" + lelData[found] + " %</b>";
-    } else {
-        resultBox.innerHTML = "該当データなし";
-    }
 }
 </script>
 
