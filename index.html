@@ -184,14 +184,15 @@ td {
         <div class="menu-text">薬液採取量</div>
     </div>
 
+    <!-- ★ ここに SiH4 を移動 -->
+    <div class="menu-item" onclick="showTool('sih4')">
+        <div class="menu-icon">🧴</div>
+        <div class="menu-text">SiH4採取圧力計目安</div>
+    </div>
+
     <div class="menu-item" onclick="showTool('lel')">
         <div class="menu-icon">🔥</div>
         <div class="menu-text">可燃性ガス LEL 一覧</div>
-    </div>
-
-    <div class="menu-item" onclick="showTool('sih4')">
-        <div class="menu-icon">🧴</div>
-        <div class="menu-text">SiH₄採取圧力計目安</div>
     </div>
 </div>
 
@@ -274,16 +275,16 @@ td {
 
     <table>
         <tr><th>ガス名</th><th>化学式</th><th>LEL(%)</th></tr>
-        <tr><td>水素</td><td>H₂</td><td>4.0</td></tr>
-        <tr><td>メタン</td><td>CH₄</td><td>5.0</td></tr>
-        <tr><td>プロパン</td><td>C₃H₈</td><td>2.1</td></tr>
-        <tr><td>ブタン</td><td>C₄H₁₀</td><td>1.8</td></tr>
-        <tr><td>アセチレン</td><td>C₂H₂</td><td>2.5</td></tr>
+        <tr><td>水素</td><td>H2</td><td>4.0</td></tr>
+        <tr><td>メタン</td><td>CH4</td><td>5.0</td></tr>
+        <tr><td>プロパン</td><td>C3H8</td><td>2.1</td></tr>
+        <tr><td>ブタン</td><td>C4H10</td><td>1.8</td></tr>
+        <tr><td>アセチレン</td><td>C2H2</td><td>2.5</td></tr>
         <tr><td>一酸化炭素</td><td>CO</td><td>12.5</td></tr>
-        <tr><td>エタノール蒸気</td><td>C₂H₅OH</td><td>3.3</td></tr>
-        <tr><td>硫化水素</td><td>H₂S</td><td>4.3</td></tr>
-        <tr><td>エチレン</td><td>C₂H₄</td><td>2.7</td></tr>
-        <tr><td>アンモニア</td><td>NH₃</td><td>15.0</td></tr>
+        <tr><td>エタノール蒸気</td><td>C2H5OH</td><td>3.3</td></tr>
+        <tr><td>硫化水素</td><td>H2S</td><td>4.3</td></tr>
+        <tr><td>エチレン</td><td>C2H4</td><td>2.7</td></tr>
+        <tr><td>アンモニア</td><td>NH3</td><td>15.0</td></tr>
     </table>
 
     <button class="back-btn" onclick="backMenu()">← ホームに戻る</button>
@@ -291,15 +292,15 @@ td {
 
 <!-- ▼ SiH4 -->
 <div id="sih4" class="app-card">
-    <h2>SiH₄採取圧力計目安</h2>
+    <h2>SiH4採取圧力計目安</h2>
 
     <label>ガス作製量（L）</label>
     <input type="number" id="sih4_makeVolume">
 
-    <label>作製するSiH₄濃度（ppm）</label>
+    <label>作製するSiH4濃度（ppm）</label>
     <input type="number" id="sih4_makePPM">
 
-    <label>SiH₄ボンベ濃度（ppm）</label>
+    <label>SiH4ボンベ濃度（ppm）</label>
     <input type="number" id="sih4_cylinderPPM">
 
     <button class="calc-btn" onclick="calcSiH4()">計算する</button>
@@ -307,7 +308,7 @@ td {
     <div class="result" id="sih4Result"></div>
 
     <div class="formula-card">
-        <div class="formula-title">SiH₄採取量計算式</div>
+        <div class="formula-title">SiH4採取量計算式</div>
         <div class="formula-math">
             <div class="fraction">
                 <span class="top">ガス作製量 × 作製濃度</span>
@@ -318,7 +319,7 @@ td {
     </div>
 
     <div class="formula-card">
-        <div class="formula-title">SiH₄圧力目安計算式</div>
+        <div class="formula-title">SiH4圧力目安計算式</div>
         <div class="formula-math">
             <div class="fraction">
                 <span class="top">採取量(mL)</span>
@@ -387,7 +388,7 @@ function calcSiH4() {
     const take_ml = (v * ppm / denom) * 1000;
     const pressure = (take_ml / 1000) * 0.175;
     sih4Result.innerHTML =
-        "SiH₄採取量：" + take_ml.toFixed(2) + " mL<br>" +
+        "SiH4採取量：" + take_ml.toFixed(2) + " mL<br>" +
         "圧力目安：" + pressure.toFixed(3) + " MPa";
 }
 </script>
