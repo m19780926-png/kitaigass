@@ -1,35 +1,25 @@
-const CACHE_NAME = "gascalc-cache-v1";
+const CACHE_NAME = "gascalc-cache-v3";
 
-const URLS_TO_CACHE = [
-  "./",
-  "./index.html",
-  "./manifest.json",
-  "./icon-192.png",
-  "./icon-512.png"
-];
-
+// 新しいSWを即時有効化
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(URLS_TO_CACHE))
-  );
+  self.skipWaiting();
 });
 
+// 古いキャッシュを全削除して最新に切り替え
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) return caches.delete(key);
-        })
-      )
+      Promise.all(keys.map((key) => caches.delete(key)))
     )
   );
+  self.clients.claim();
 });
 
+// 常にネットワーク優先（最新を取りに行く）
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
+    fetch(event.request)
+      .then((response) => response)
+      .catch(() => caches.match(event.request))
   );
 });
